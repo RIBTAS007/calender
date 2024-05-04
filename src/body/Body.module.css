@@ -3,4 +3,18 @@
   align-items: center;
   justify-content: center;
   background-color: #f9fafb;
+  position: relative;
+  margin-top: 5px;
+}
+
+.pattern1 {
+  position: absolute;
+  bottom: -200px; /* Adjust as needed */
+  left: 20px; /* Adjust as needed */
+}
+
+.pattern2 {
+  position: absolute;
+  bottom: 20px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
 }

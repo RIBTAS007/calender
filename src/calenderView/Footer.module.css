@@ -53,3 +53,8 @@
   font-weight: 600;
   line-height: 21px;
 }
+
+.footerButtonIcon {
+  width: 20px;
+  height: 20px;
+}

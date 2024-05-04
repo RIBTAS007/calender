@@ -13,7 +13,7 @@ const Footer = () => {
       <div>
         <button className={styles.footerButton}>
           <span className={styles.footerButtonText}>Next</span>
-          <BiChevronRight />
+          <BiChevronRight className={styles.footerButtonIcon} />
         </button>
       </div>
     </div>

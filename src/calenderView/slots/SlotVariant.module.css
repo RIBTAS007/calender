@@ -1,0 +1,43 @@
+.variantLabel {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 21px;
+  color: #555770;
+}
+
+.selectContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.selectVariant {
+  width: 384px;
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid #c7c9d9;
+  padding: 8px 12px;
+  color: #378760;
+  background-color: #fafafc;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  outline: none;
+}
+
+.selectVariant option {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  color: #378760;
+  border: 1px solid #c7c9d9;
+  outline: none;
+}
+
+.selectOption:hover {
+  background-color: #378760; /* Green background color on hover */
+  color: #fff;
+}
+
+.hr {
+  color: #c7c9d9;
+}
