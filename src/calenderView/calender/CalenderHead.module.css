@@ -1,0 +1,17 @@
+.header {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.subheader1 {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.subheader2 {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}

@@ -1,0 +1,42 @@
+.cal input,
+.cal button {
+  font: inherit;
+}
+
+.cal header {
+  background-color: #323639;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.cal header h1 {
+  font-size: inherit;
+  margin: 0;
+}
+
+.calContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.calContainer > * > * {
+  margin: 0px;
+}
+
+.calContainerContent {
+  display: flex;
+  max-width: 100%;
+  flex-basis: 420px;
+  flex-direction: column;
+  flex-grow: 100;
+  align-items: stretch;
+  padding-top: 1em;
+}
+
+.calContainerContent .react-calendar {
+  margin: 0 auto;
+}

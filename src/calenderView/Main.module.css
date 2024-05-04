@@ -1,0 +1,13 @@
+.main {
+  height: 70vh;
+  width: 928px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  background-color: blue;
+  margin-top: 2rem;
+}
+
+.body {
+  display: flex;
+}
