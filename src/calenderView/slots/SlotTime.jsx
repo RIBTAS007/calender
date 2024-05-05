@@ -60,6 +60,8 @@ const SlotTime = () => {
     ) {
       const selectedSlotData = filteredSlotTimes[selectedSlot];
       dispatch(setSelectedSlotTime(selectedSlotData));
+    } else {
+      dispatch(setSelectedSlotTime({}));
     }
   }, [selectedSlot, filteredSlotTimes, dispatch]);
 
