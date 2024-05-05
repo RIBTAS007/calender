@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+## Objective
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Develop a dynamic appointment booking screen for our app using React.
 
-## Available Scripts
+![App Preview](./src/images/app.png)
 
-In the project directory, you can run:
+## How to run the project
 
-### `npm start`
+- fork the project to your github and pull the code into your local machine.
+- once you have the local code reaady , open the trminal and run `npm install`
+- once npm install is successful, you can run `npm start` to start the app
+- Once the app is successfully launched you can see it on localhost:3000.(depends on your machine)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech stack used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React
+- HTML,CSS, JavaScript
+- react calender: for displaying the calender
+- react redux and react redux toolkit for managing the states.
+- react icons for icons
+- poppins font
+- moment timezone to convert all the dates and time to different formats.
 
-### `npm test`
+## Validations checked
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- user cannot select previous date for booking.
+- added overflow in the timeslots section so that we can accomdate n number of timeslots in limited space.
+- used next buuton to show the booking information.
+  - It will not be enabled until a user selects a slot and a booking date.
+- I have assumed that the `select from variants` is an optional feild.
+  - if user does not select the variant then all the slots irrespective of the duration will be shown.
+  - it has no involvement with fetching the data and is solely responsible forthe filter part.
+- I have tried to copy each and every description os style from the figma provided, and have made it responsive too.
+- for optimization I have use useMemo, usecallback hooks.
+- the lazyloading didnt felt necessary as the app was not too big and idnt have lots of components.
+- for keeping the fetch logic and handling errors , I have created a custom hook that takes care of it.
+- redux is used for managing the states.
+- I havent used plain css from a long time so it was a good revision, took a lot of search to figure out some specific css.
