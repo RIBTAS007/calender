@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./slotTime.module.css";
+import SlotItems from "./SlotItems";
 
 const slotsData = [
   {
@@ -21,14 +22,12 @@ const slotsData = [
 ];
 
 const SlotTime = () => {
-  const formatTime = (timestamp) => {
-    const date = new Date(timestamp);
-    let hours = date.getHours();
-    const minutes = date.getMinutes();
-    const ampm = hours >= 12 ? "PM" : "AM";
-    hours = hours % 12 || 12;
-    return `${hours}:${minutes < 10 ? "0" : ""}${minutes} ${ampm}`;
+  const [selectedSlot, setSelectedSlot] = useState(null); // Change to null initially
+
+  const handleSlotSelect = (index) => {
+    setSelectedSlot(index === selectedSlot ? null : index); // Toggle selection
   };
+
   return (
     <div>
       <div>
@@ -38,9 +37,13 @@ const SlotTime = () => {
       </div>
       <div className={styles.slots}>
         {slotsData.map((slot, index) => (
-          <button key={index} className={styles.slotItem}>
-            {formatTime(slot.start_time)} - {formatTime(slot.end_time)}
-          </button>
+          <SlotItems
+            key={index} // Add key prop for each item in the list
+            slot={slot}
+            index={index}
+            selected={index === selectedSlot}
+            handleSlotSelect={handleSlotSelect}
+          />
         ))}
       </div>
     </div>
