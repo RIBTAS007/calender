@@ -85,6 +85,9 @@ nav {
 }
 
 @media (max-width: 768px) {
+  nav {
+    padding: 8px 8px;
+  }
   .logoImage {
     max-width: 150px;
   }

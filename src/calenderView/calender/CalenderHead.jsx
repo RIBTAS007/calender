@@ -6,7 +6,7 @@ const CalenderHead = () => {
     <div>
       <span className={styles.header}>Test Service</span>
       <div>
-        <span className={styles.subheader1}>TimeZone:</span>{" "}
+        <span className={styles.subheader1}>TimeZone:</span>
         <span className={styles.subheader2}>Asia/Calcutta</span>
       </div>
     </div>
