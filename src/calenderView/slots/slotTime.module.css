@@ -4,24 +4,7 @@
   font-weight: 600;
   color: #555770;
   text-transform: uppercase;
-}
-
-.slotItem {
-  width: 384px;
-  height: 48px;
-  border-radius: 10px;
-  justify-content: space-between;
-  display: flex;
-  padding: 8px 12px;
-  align-items: center;
-  outline: none;
-  border: 1px solid #378760;
-  color: #378760;
-  background-color: #fff;
-  font-size: 14px;
-  line-height: 21px;
-  font-weight: 600;
-  cursor: pointer;
+  padding-bottom: 5px;
 }
 
 .slots {
@@ -30,17 +13,54 @@
   gap: 1rem;
   max-height: 237px;
   overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #378760 #fff;
 }
 
-.selected {
-  background-color: #378760;
-  color: white;
+.noSlots {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 600;
+  color: #555770;
+  text-transform: uppercase;
+  margin: auto;
 }
 
-.checkIcon {
-  height: 22.5px;
-  width: 22.5px;
-  color: #378760;
+.slots::-webkit-scrollbar {
+  width: 8px;
+}
+
+.slots::-webkit-scrollbar-track {
   background-color: #fff;
-  border-radius: 50%;
+}
+
+.slots::-webkit-scrollbar-thumb {
+  background-color: #378760;
+  border-radius: 4px;
+}
+
+.slots::-webkit-scrollbar-thumb:hover {
+  background-color: #22543d;
+}
+
+@media screen and (max-width: 768px) {
+  .slotHead {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .slots {
+    max-height: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .slotHead {
+    font-size: 10px;
+    line-height: 15px;
+  }
+
+  .slots {
+    max-height: 150px;
+  }
 }

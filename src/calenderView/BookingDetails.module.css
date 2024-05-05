@@ -1,0 +1,50 @@
+.bookingDetailsContainer {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+  min-width: 800px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bookingDetailsTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #378760;
+  display: flex;
+  padding-bottom: 30px;
+}
+
+.bookingDetailsInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.bookingDetailsLabel {
+  font-weight: bold;
+  color: #378760;
+}
+
+.bookingDetailsData {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 600;
+  color: #555770;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .bookingDetailsContainer {
+    padding: 12px;
+  }
+
+  .bookingDetailsTitle {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+}

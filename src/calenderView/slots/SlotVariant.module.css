@@ -3,6 +3,7 @@
   font-weight: 600;
   line-height: 21px;
   color: #555770;
+  padding-bottom: 5px;
 }
 
 .selectContainer {
@@ -11,33 +12,48 @@
 }
 
 .selectVariant {
-  width: 384px;
+  width: 100%;
+  max-width: 384px;
   height: 48px;
   border-radius: 10px;
   border: 1px solid #c7c9d9;
-  padding: 8px 12px;
+  padding: 12px;
   color: #378760;
   background-color: #fafafc;
   font-size: 14px;
   font-weight: 600;
-  line-height: 21px;
+  line-height: 48px;
   outline: none;
 }
 
 .selectVariant option {
   font-size: 14px;
   font-weight: 600;
-  line-height: 21px;
+  line-height: 48px;
   color: #378760;
   border: 1px solid #c7c9d9;
   outline: none;
 }
 
 .selectOption:hover {
-  background-color: #378760; /* Green background color on hover */
+  background-color: #378760;
   color: #fff;
 }
 
 .hr {
   color: #c7c9d9;
+  margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+  .selectContainer,
+  .selectVariant {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .selectVariant {
+    width: 100%;
+    line-height: 48px;
+  }
 }

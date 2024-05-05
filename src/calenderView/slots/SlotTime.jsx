@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import styles from "./slotTime.module.css";
 import SlotItems from "./SlotItems";
 import useGetSlots from "../../utils/useGetSlots";
@@ -13,6 +13,7 @@ const SlotTime = () => {
   const [filteredSlotTimes, setFilteredSlotTimes] = useState(null);
   const [slotDate, setSlotDate] = useState("");
   const slotsData = useGetSlots();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setSelectedSlot(null);
@@ -26,11 +27,13 @@ const SlotTime = () => {
       return duration === parseInt(variant) || variant === "";
     });
 
-  const formatDate = (dateStr) => {
+  const formatDate = useMemo(() => {
     const options = { weekday: "long", month: "long", day: "numeric" };
-    const inputDate = new Date(dateStr);
-    return inputDate.toLocaleDateString("en-US", options);
-  };
+    return (dateStr) => {
+      const inputDate = new Date(dateStr);
+      return inputDate.toLocaleDateString("en-US", options);
+    };
+  }, []);
 
   useEffect(() => {
     if (slotsData && slotsData.length > 0) {
@@ -41,6 +44,7 @@ const SlotTime = () => {
 
       setFilteredSlotTimes(selectedSlots);
       setSlotDate(formatDate(slotsData[0]?.date));
+      setLoading(false);
     }
   }, [slotsData, slotVariant]);
 
@@ -52,7 +56,7 @@ const SlotTime = () => {
     if (
       selectedSlot !== null &&
       filteredSlotTimes &&
-      filteredSlotTimes.length > 0
+      filteredSlotTimes?.length > 0
     ) {
       const selectedSlotData = filteredSlotTimes[selectedSlot];
       dispatch(setSelectedSlotTime(selectedSlotData));
@@ -61,26 +65,33 @@ const SlotTime = () => {
 
   return (
     <div>
-      <div>
-        <span
-          className={styles.slotHead}
-        >{`${slotDate} - AVAILABLE SLOTS`}</span>
-      </div>
-      <div className={styles.slots}>
-        {filteredSlotTimes?.length > 0 ? (
-          filteredSlotTimes.map((slot, index) => (
-            <SlotItems
-              key={index}
-              slot={slot}
-              index={index}
-              selected={index === selectedSlot}
-              handleSlotSelect={handleSlotSelect}
-            />
-          ))
-        ) : (
-          <p className={styles.noSlots}>NO SLOTS AVAILABLE</p>
-        )}
-      </div>
+      {loading ? (
+        <p className={styles.slotHead}>Loading...</p>
+      ) : (
+        <>
+          {slotDate && (
+            <div
+              className={styles.slotHead}
+            >{`${slotDate} - AVAILABLE SLOTS`}</div>
+          )}
+
+          <div className={styles.slots}>
+            {filteredSlotTimes?.length > 0 ? (
+              filteredSlotTimes?.map((slot, index) => (
+                <SlotItems
+                  key={index}
+                  slot={slot}
+                  index={index}
+                  selected={index === selectedSlot}
+                  handleSlotSelect={handleSlotSelect}
+                />
+              ))
+            ) : (
+              <p className={styles.noSlots}>NO SLOTS AVAILABLE</p>
+            )}
+          </div>
+        </>
+      )}
     </div>
   );
 };
