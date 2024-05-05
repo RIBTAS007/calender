@@ -10,7 +10,7 @@ const SlotVariant = () => {
 
   const handleSelectChange = (event) => {
     dispatch(setSlotVariant(event.target.value));
-    dispatch(setSelectedSlotTime([]));
+    dispatch(setSelectedSlotTime({}));
   };
 
   useEffect(() => {

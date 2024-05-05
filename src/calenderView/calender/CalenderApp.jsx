@@ -19,7 +19,7 @@ const CalenderApp = () => {
     const date = moment(value).tz("Asia/Kolkata").format("YYYY-MM-DD");
     dispatch(setDate(date));
     dispatch(setSlotVariant(""));
-    dispatch(setSelectedSlotTime([]));
+    dispatch(setSelectedSlotTime({}));
   }, [value]);
   return (
     <div className={styles.cal}>

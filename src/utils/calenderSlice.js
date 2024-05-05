@@ -6,7 +6,8 @@ const calenderSlice = createSlice({
     date: null,
     slots: [],
     slotVariant: "",
-    selectedSlotTime: [],
+    selectedSlotTime: {},
+    visible: false,
   },
   reducers: {
     setDate: (state, action) => {
@@ -21,9 +22,17 @@ const calenderSlice = createSlice({
     setSelectedSlotTime: (state, action) => {
       state.selectedSlotTime = action.payload;
     },
+    setVisible: (state) => {
+      state.visible = !state.visible;
+    },
   },
 });
 
-export const { setDate, setSlots, setSlotVariant, setSelectedSlotTime } =
-  calenderSlice.actions;
+export const {
+  setDate,
+  setSlots,
+  setSlotVariant,
+  setSelectedSlotTime,
+  setVisible,
+} = calenderSlice.actions;
 export default calenderSlice.reducer;

@@ -49,14 +49,15 @@ const SlotTime = () => {
   };
 
   useEffect(() => {
-    dispatch(
-      setSelectedSlotTime(
-        selectedSlot && filteredSlotTimes?.length > 0
-          ? filteredSlotTimes[selectedSlot]
-          : []
-      )
-    );
-  }, [selectedSlot, filteredSlotTimes]);
+    if (
+      selectedSlot !== null &&
+      filteredSlotTimes &&
+      filteredSlotTimes.length > 0
+    ) {
+      const selectedSlotData = filteredSlotTimes[selectedSlot];
+      dispatch(setSelectedSlotTime(selectedSlotData));
+    }
+  }, [selectedSlot, filteredSlotTimes, dispatch]);
 
   return (
     <div>
