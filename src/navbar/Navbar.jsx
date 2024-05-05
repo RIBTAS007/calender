@@ -1,17 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
+import { BiChevronDown, BiMenu } from "react-icons/bi";
 import logo from "../images/logo.png";
 import styles from "./Navbar.module.css";
-import { BiChevronDown } from "react-icons/bi";
 import NavButton from "./NavButton";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+    console.log("event triggered");
+  };
+
   return (
-    <div className={styles.navbar}>
+    <nav className={styles.navbar}>
       <div>
-        <img src={logo} alt="company logo" className="logoImage" />
+        <img src={logo} alt="Company Logo" className={styles.logoImage} />
       </div>
-      <div>
-        <ul className={styles.navList}>
+
+      <div className={styles.menu}>
+        <BiMenu className={styles.menuIcon} onClick={toggleMenu} />
+      </div>
+
+      <div className={`${styles.navList} ${menuOpen && styles.open}`}>
+        <ul>
           <li className={styles.navItems}>
             <div>
               <span>Menu</span>
@@ -28,7 +40,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </nav>
   );
 };
 
